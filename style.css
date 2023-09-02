@@ -123,6 +123,10 @@ header h1 {
 	padding-inline-end: 0;
 }
 
+header h1 a {
+	color: inherit;
+	text-decoration: none;
+}
 
 .divider {
 	grid-area: divider;

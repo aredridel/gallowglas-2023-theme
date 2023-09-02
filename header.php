@@ -29,7 +29,7 @@
     <header>
         <div class="logo">
             <h1>
-                M. Todd<br>Gallowglas
+                <a href="<?= home_url() ?>">M. Todd<br>Gallowglas</a>
             </h1>
         </div>
     
