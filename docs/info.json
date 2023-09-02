@@ -13,10 +13,6 @@
 		"description" : "The Gallowglas 2023 Theme",
 		"installation" : "Click the activate button and that's it.",
 		"changelog" : "<h4>1.0 –  1 Sept 2023</h4><ul><li>Initital release.</li></ul>"
-	},
-	"banners" : {
-		"low" : "https://rudrastyh.com/wp-content/uploads/updater/banner-772x250.jpg",
-		"high" : "https://rudrastyh.com/wp-content/uploads/updater/banner-1544x500.jpg"
 	}
 }
 
