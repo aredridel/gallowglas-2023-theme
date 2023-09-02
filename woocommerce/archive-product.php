@@ -72,7 +72,6 @@ do_action( 'woocommerce_before_main_content' );
 						 * Hook: woocommerce_shop_loop.
 						 */
 						do_action( 'woocommerce_shop_loop' );
-						print_r($product);
 
 						wc_get_template_part( 'content', 'product' );
 					?>
