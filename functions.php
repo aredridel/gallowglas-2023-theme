@@ -83,7 +83,7 @@ class GG2023ThemeUpdateChecker {
 	public function __construct() {
 
 		$this->theme_slug = 'gallowglas-2023';
-		$this->version = '1.0';
+		$this->version = wp_get_theme()->get("Version");
 		$this->cache_key = 'gg2023_custom_update';
 		$this->cache_allowed = false;
 
@@ -189,7 +189,7 @@ class GG2023ThemeUpdateChecker {
 		) {
 			$res = [
 				"slug" => $this->theme_slug,
-				"theme" => 'gallowglas-2023',
+				"theme" => 'Gallowglas 2023',
 				"new_version" => $remote->version,
 				"tested" => $remote->tested,
 				"package" => $remote->download_url
