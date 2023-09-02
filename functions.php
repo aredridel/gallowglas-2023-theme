@@ -73,40 +73,24 @@ function gg2023_post_footer() {
 	}
 }
 
-<?php
-/*
- * Plugin name: Misha Update Checker
- * Description: This simple plugin does nothing, only gets updates from a custom server
- * Version: 1.0
- * Author: Misha Rudrastyh
- * Author URI: https://rudrastyh.com
- * License: GPL
- */
-
-/**/
-
-
-defined( 'ABSPATH' ) || exit;
-
-
 if( ! class_exists( 'mishaUpdateChecker' ) ) {
 
 	class mishaUpdateChecker{
 
-		public $plugin_slug;
+		public $theme_slug;
 		public $version;
 		public $cache_key;
 		public $cache_allowed;
 
 		public function __construct() {
 
-			$this->plugin_slug = plugin_basename( __DIR__ );
+			$this->theme_slug = theme_basename( __DIR__ );
 			$this->version = '1.0';
 			$this->cache_key = 'misha_custom_upd';
 			$this->cache_allowed = false;
 
-			add_filter( 'plugins_api', array( $this, 'info' ), 20, 3 );
-			add_filter( 'site_transient_update_plugins', array( $this, 'update' ) );
+			add_filter( 'themes_api', array( $this, 'info' ), 20, 3 );
+			add_filter( 'site_transient_update_themes', array( $this, 'update' ) );
 			add_action( 'upgrader_process_complete', array( $this, 'purge' ), 10, 2 );
 
 		}
@@ -151,13 +135,13 @@ if( ! class_exists( 'mishaUpdateChecker' ) ) {
 			// print_r( $action );
 			// print_r( $args );
 
-			// do nothing if you're not getting plugin information right now
-			if( 'plugin_information' !== $action ) {
+			// do nothing if you're not getting theme information right now
+			if( 'theme_information' !== $action ) {
 				return $res;
 			}
 
-			// do nothing if it is not our plugin
-			if( $this->plugin_slug !== $args->slug ) {
+			// do nothing if it is not our theme
+			if( $this->theme_slug !== $args->slug ) {
 				return $res;
 			}
 
@@ -214,13 +198,13 @@ if( ! class_exists( 'mishaUpdateChecker' ) ) {
 				&& version_compare( $remote->requires_php, PHP_VERSION, '<' )
 			) {
 				$res = new stdClass();
-				$res->slug = $this->plugin_slug;
-				$res->plugin = plugin_basename( __FILE__ ); // misha-update-plugin/misha-update-plugin.php
+				$res->slug = $this->theme_slug;
+				$res->theme = theme_basename( __FILE__ );
 				$res->new_version = $remote->version;
 				$res->tested = $remote->tested;
 				$res->package = $remote->download_url;
 
-				$transient->response[ $res->plugin ] = $res;
+				$transient->response[ $res->theme ] = $res;
 
 	    }
 
@@ -233,9 +217,9 @@ if( ! class_exists( 'mishaUpdateChecker' ) ) {
 			if (
 				$this->cache_allowed
 				&& 'update' === $options['action']
-				&& 'plugin' === $options[ 'type' ]
+				&& 'theme' === $options[ 'type' ]
 			) {
-				// just clean the cache when new plugin version is installed
+				// just clean the cache when new theme version is installed
 				delete_transient( $this->cache_key );
 			}
 
