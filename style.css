@@ -1,6 +1,6 @@
 /*
 Theme Name: Gallowglas 2023
-Version: 1.2
+Version: 1.3
 Author: Aria Stewart
 Author URI: https://dinhe.net/
 Description: Custom for Michael Gallowglas
@@ -280,7 +280,7 @@ main.wide {
 
 @media (min-width: 60rem) {
 	main.with-sidebars {
-		grid-template: "side1 main side2" auto / minmax(250px, auto) minmax(15rem, 50rem) minmax(250px, auto) ;
+		grid-template: "side1 main side2" auto / minmax(280px, 1fr) minmax(15rem, 50rem) minmax(280px, 1fr) ;
 	}
 }
 
