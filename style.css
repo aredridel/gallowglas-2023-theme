@@ -580,6 +580,9 @@ article .attribution, article .post-footer {
 
 .product_title {
 	font-family: "Raleway", sans-serif;
+	font-size: 1.5rem;
+	font-weight: 400;
+
 }
 
 .widget_shopping_cart_content {
@@ -593,6 +596,10 @@ article .attribution, article .post-footer {
 }
 
 .woocommerce-mini-cart__buttons {
+	text-align: center;
+}
+
+.woocommerce-products-header__title {
 	text-align: center;
 }
 
