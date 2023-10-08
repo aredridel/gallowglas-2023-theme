@@ -284,20 +284,20 @@ main.wide {
 	}
 }
 
-main>article, main>section:not(.gg-sidebar) {
+main>section:not(.gg-sidebar) {
 	grid-area: main;
 	margin-inline: 0 1rem;
 	margin-block: 1rem;
 }
 
 @media (min-width: 45rem) {
-	main>article, main>section:not(.gg-sidebar) {
+	main>section:not(.gg-sidebar) {
 		margin-inline: 2rem;
 	}
 }
 
 @media (min-width: 60rem) {
-	main>article, main>section:not(.gg-sidebar) {
+	main>section:not(.gg-sidebar) {
 		margin: 0;
 	}
 }
