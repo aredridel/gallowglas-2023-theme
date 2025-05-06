@@ -134,6 +134,7 @@ header h1 a {
 	justify-self: center;
 	align-self: center;
 	will-change: transform;
+	pointer-events: none;
 }
 
 .divider svg {
@@ -688,4 +689,16 @@ article .attribution, article .post-footer {
 
 .product {
 	margin-block-end: 2rem;
+}
+
+.logo a {
+	position: relative;
+display: block;
+	width: 160px;
+	height: 50px;
+}
+.logo a img {
+	position: absolute;
+	z-index: 1;
+	top: -1rem;
 }

@@ -28,7 +28,11 @@
     <header>
         <div class="logo">
             <h1>
-                <a href="<?= home_url() ?>">M. Todd<br>Gallowglas</a>
+		<?php if (has_custom_logo()): ?>
+			<?= the_custom_logo() ?>
+		<?php else: ?>
+		       <a href="<?= esc_url( home_url( '/' ) ); ?>" rel="home" <?php echo $is_front ? 'aria-current="page"' : ''; ?>><?php bloginfo( 'name' ); ?></a>
+		<?php endif ?>
             </h1>
         </div>
     

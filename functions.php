@@ -12,6 +12,10 @@ add_action( 'after_setup_theme', function () {
 	add_theme_support( 'body-open' );
 	add_theme_support( 'title-tag' );
 	add_theme_support( 'woocommerce' );
+	add_theme_support( 'custom-logo', array(
+		'height' => 160,
+		'width'  => 160,
+	) );
 	remove_action( 'woocommerce_before_subcategory_title', 'woocommerce_subcategory_thumbnail', 10 );
 });
 
