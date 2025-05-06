@@ -237,3 +237,73 @@ class GG2023ThemeUpdateChecker {
 
 new GG2023ThemeUpdateChecker();
 
+if ( ! function_exists( 'gallowglas2023_comment' ) ) :
+	/**
+	 * Template for comments and pingbacks.
+	 *
+	 * @param WP_Comment $comment The comment object.
+	 * @param array      $args    An array of arguments. @see get_comment_reply_link()
+	 * @param int        $depth   The depth of the comment.
+	 */
+	function gallowglas2023_comment( $comment, $args, $depth ) {
+		$GLOBALS['comment'] = $comment;
+		if ($comment->comment_type === 'comment' || !$comment->comment_type): ?>
+			<li <?php comment_class(); ?> id="li-comment-<?php comment_ID(); ?>">
+				<div id="comment-<?php comment_ID(); ?>">
+					<div class="comment-author vcard">
+						<?php echo get_avatar( $comment, 40 ); ?>
+						<?php
+						/* translators: %s: Author display name. */
+						printf( __( '%s <span class="says">says:</span>', 'gallowglas2023' ), sprintf( '<cite class="fn">%s</cite>', get_comment_author_link() ) );
+						?>
+					</div>
+
+					<?php
+						$commenter = wp_get_current_commenter();
+						if ( $commenter['comment_author_email'] ) {
+							$moderation_note = __( 'Your comment is awaiting moderation.', 'gallowglas2023' );
+						} else {
+							$moderation_note = __( 'Your comment is awaiting moderation. This is a preview; your comment will be visible after it has been approved.', 'gallowglas2023' );
+						}
+					?>
+
+					<?php if ( '0' === $comment->comment_approved ) : ?>
+
+						<em class="comment-awaiting-moderation"><?php echo $moderation_note; ?></em>
+
+						<br />
+					<?php endif; ?>
+
+					<div class="comment-meta commentmetadata">
+						<a href="<?php echo esc_url( get_comment_link( $comment->comment_ID ) ); ?>">
+							<?php
+								/* translators: 1: Date, 2: Time. */
+								printf( __( '%1$s at %2$s', 'gallowglas2023' ), get_comment_date(), get_comment_time() );
+							?>
+						</a>
+						<?php edit_comment_link( __( '(Edit)', 'gallowglas2023' ), ' ' ); ?>
+					</div><!-- .comment-meta .commentmetadata -->
+
+					<div class="comment-body"><?php comment_text(); ?></div>
+
+					<div class="reply">
+						<?php comment_reply_link(
+							array_merge(
+								$args,
+								array(
+									'depth'     => $depth,
+									'max_depth' => $args['max_depth'],
+								)
+							)
+						); ?>
+					</div><!-- .reply -->
+				</div><!-- #comment-##  -->
+			</li>
+		<?php elseif ($comment->comment_type === 'pingback' || $comment->comment_type === 'trackback'): ?>
+			<li class="post pingback">
+				<p><?php _e( 'Pingback:', 'gallowglas2023' ); ?> <?php comment_author_link(); ?><?php edit_comment_link( __( '(Edit)', 'gallowglas2023' ), ' ' ); ?></p>
+			</li>
+		<?php endif ?>
+	<?php } 
+endif;
+

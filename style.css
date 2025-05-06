@@ -405,6 +405,13 @@ article h2, section:not(.gg-sidebar) h2 {
 	text-align: center;
 }
 
+h3 {
+	font-family: Raleway, sans-serif;
+	font-size: 1.5rem;
+	font-weight: 400;
+	text-align: center;
+}
+
 article .attribution, article .post-footer {
 	font-family: Raleway, sans-serif;
 	font-size: 1rem;
@@ -701,4 +708,47 @@ display: block;
 	position: absolute;
 	z-index: 1;
 	top: -1rem;
+}
+
+.comments-link {
+	text-align: center;
+}
+
+.commentlist {
+	list-style-type: none;
+}
+
+#comments {
+	border-image: url(border.png);
+	border-image-slice:	64;
+	border-image-width: 64px;
+	padding-block-end: 16px;
+
+	> h3 {
+		background-color: white;
+		margin-inline: 72px;
+		border-left: 4px solid var(--color-accent);
+		border-right: 4px solid var(--color-accent);
+		position: relative;
+		top: -2px;
+	}
+}
+
+.comment-form-comment {
+	label {
+		display: block;
+		font-family: Raleway, sans-serif;
+		font-size: 1rem;
+		font-weight: 400;
+	}
+	textarea, input {
+		width: 100%;
+	}
+}
+
+.required-field-message {
+	float: right;
+	font-family: Raleway, sans-serif;
+	font-size: 0.75rem;
+	font-weight: 400;
 }
