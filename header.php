@@ -18,8 +18,8 @@
         );
     </script>
     <?php wp_head(); ?>
-    <link rel="alternate" type="application/atom+xml" title="<?php bloginfo('name'); ?> Posts Feed" href="<?php bloginfo(‘atom_url’); ?>">
-    <link rel="alternate" type="application/atom+xml" title="<?php bloginfo(‘name’); ?> Comments Feed" href="<?php bloginfo(‘comments_atom_url’); ?>">
+    <link rel="alternate" type="application/atom+xml" title="<?php bloginfo('name'); ?> Posts Feed"    href="<?php bloginfo('atom_url'); ?>">
+    <link rel="alternate" type="application/atom+xml" title="<?php bloginfo('name’); ?> Comments Feed" href="<?php bloginfo(‘comments_atom_url'); ?>">
 </head>
 
 <body>
