@@ -18,6 +18,8 @@
         );
     </script>
     <?php wp_head(); ?>
+    <link rel="alternate" type="application/atom+xml" title="Atom 0.3" href="<?php bloginfo(‘atom_url’); ?>">
+    <link rel="alternate" type="application/rss+xml" title="<?php bloginfo(‘name’); ?> RSS Comments Feed" href="<?php bloginfo(‘comments_rss2_url’); ?>">
 </head>
 
 <body>
