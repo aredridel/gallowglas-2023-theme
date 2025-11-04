@@ -18,7 +18,15 @@
 	);
 	</script>
 	<title>{{meta_title}}</title>
-	<style>img:is([sizes="auto" i], [sizes^="auto," i]) { contain-intrinsic-size: 3000px 1500px }</style>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+	<meta name="HandheldFriendly" content="True" />
+
+    {{!-- Styles'n'Scripts --}}
+    <link rel="stylesheet" type="text/css" href="{{asset "style.css"}}" />
+
+    {{!-- This tag outputs SEO meta+structured data and other important settings --}}
+    {{ghost_head}}
 
 	<link rel="icon" href="https://i0.wp.com/gallowglasarmy.com/wp-content/uploads/2025/05/Coat-of-Arms-small.jpg?fit=32%2C32&#038;ssl=1" sizes="32x32" />
 	<link rel="icon" href="https://i0.wp.com/gallowglasarmy.com/wp-content/uploads/2025/05/Coat-of-Arms-small.jpg?fit=192%2C192&#038;ssl=1" sizes="192x192" />
@@ -111,36 +119,12 @@
 
 	    <footer> <div id="block-13" class="widget_block widget_search"><form role="search" method="get" action="https://gallowglasarmy.com/" class="wp-block-search__button-outside wp-block-search__text-button aligncenter .center wp-block-search"    ><label class="wp-block-search__label screen-reader-text" for="wp-block-search__input-1" >Search</label><div class="wp-block-search__inside-wrapper "  style="width: 50%"><input class="wp-block-search__input" id="wp-block-search__input-1" placeholder="" value="" type="search" name="s" required /><button aria-label="Search" class="wp-block-search__button wp-element-button" type="submit" >Search</button></div></form></div><div id="block-6" class="widget_block widget_text">
 		    <p class="has-text-align-center">Copyright 2025 - Michael Todd Gallowglas</p>
-		</div> </footer>
+		</div> 
+        </footer>
 	</div>
 
-	<script type="speculationrules">
-	    {"prefetch":[{"source":"document","where":{"and":[{"href_matches":"\/*"},{"not":{"href_matches":["\/wp-*.php","\/wp-admin\/*","\/wp-content\/uploads\/*","\/wp-content\/*","\/wp-content\/plugins\/*","\/wp-content\/themes\/gallowglas-2023-theme\/*","\/*\\?(.+)"]}},{"not":{"selector_matches":"a[rel~=\"nofollow\"]"}},{"not":{"selector_matches":".no-prefetch, .no-prefetch a"}}]},"eagerness":"conservative"}]}
-	</script>
-	<link rel='stylesheet' id='wc-square-cart-checkout-block-css' href='https://gallowglasarmy.com/wp-content/plugins/woocommerce-square/build/assets/frontend/wc-square-cart-checkout-blocks.css?ver=4.9.8' type='text/css' media='all' />
-	<link rel='stylesheet' id='wc-blocks-style-css' href='https://gallowglasarmy.com/wp-content/plugins/woocommerce/assets/client/blocks/wc-blocks.css?ver=wc-10.1.2' type='text/css' media='all' />
-	<script type="text/javascript" src="https://gallowglasarmy.com/wp-content/plugins/woocommerce/assets/js/sourcebuster/sourcebuster.min.js?ver=10.1.2" id="sourcebuster-js-js"></script>
-	<script type="text/javascript" id="wc-order-attribution-js-extra">
-	    /* <![CDATA[ */
-	    var wc_order_attribution = {"params":{"lifetime":1.0000000000000000818030539140313095458623138256371021270751953125e-5,"session":30,"base64":false,"ajaxurl":"https:\/\/gallowglasarmy.com\/wp-admin\/admin-ajax.php","prefix":"wc_order_attribution_","allowTracking":true},"fields":{"source_type":"current.typ","referrer":"current_add.rf","utm_campaign":"current.cmp","utm_source":"current.src","utm_medium":"current.mdm","utm_content":"current.cnt","utm_id":"current.id","utm_term":"current.trm","utm_source_platform":"current.plt","utm_creative_format":"current.fmt","utm_marketing_tactic":"current.tct","session_entry":"current_add.ep","session_start_time":"current_add.fd","session_pages":"session.pgs","session_count":"udata.vst","user_agent":"udata.uag"}};
-	    /* ]]> */
-	</script>
-	<script type="text/javascript" src="https://gallowglasarmy.com/wp-content/plugins/woocommerce/assets/js/frontend/order-attribution.min.js?ver=10.1.2" id="wc-order-attribution-js"></script>
-	<script type="text/javascript" id="jetpack-stats-js-before">
-	    /* <![CDATA[ */
-	    _stq = window._stq || [];
-	    _stq.push([ "view", JSON.parse("{\"v\":\"ext\",\"blog\":\"43980773\",\"post\":\"0\",\"tz\":\"-8\",\"srv\":\"gallowglasarmy.com\",\"arch_home\":\"1\",\"j\":\"1:14.9.1\"}") ]);
-	    _stq.push([ "clickTrackerInit", "43980773", "0" ]);
-	    /* ]]> */
-	</script>
-	<script type="text/javascript" src="https://stats.wp.com/e-202544.js" id="jetpack-stats-js" defer="defer" data-wp-strategy="defer"></script>
-	<script type="text/javascript" id="wc-cart-fragments-js-extra">
-	    /* <![CDATA[ */
-	    var wc_cart_fragments_params = {"ajax_url":"\/wp-admin\/admin-ajax.php","wc_ajax_url":"\/?wc-ajax=%%endpoint%%","cart_hash_key":"wc_cart_hash_1d86d18d974a4db740152d4e55b9efdb","fragment_name":"wc_fragments_1d86d18d974a4db740152d4e55b9efdb","request_timeout":"5000"};
-	    /* ]]> */
-	</script>
-	<script type="text/javascript" src="https://gallowglasarmy.com/wp-content/plugins/woocommerce/assets/js/frontend/cart-fragments.min.js?ver=10.1.2" id="wc-cart-fragments-js" defer="defer" data-wp-strategy="defer"></script>
-	<!-- Theme version 1.16 --> 
+
+	{{ghost_foot}}
     </body>
 
 </html>
